@@ -1,0 +1,87 @@
+/*= Style for button to change menu style START
+  ==================================================== */
+	#change_btn:hover {
+        background-color: #eceeed;
+    }
+/*= END
+  ==================================================== */
+
+/*= Style for button to search style START
+  ==================================================== */
+	#search_btn:hover {
+        background-color: #eceeed;
+    }
+/*= END
+  ==================================================== */
+
+/*= Style for button to setting style START
+  ==================================================== */
+	#setting_btn:hover {
+        background-color: #eceeed;
+    }
+/*= END
+  ==================================================== */
+
+/*= Style for menu with icon only START
+==================================================== */
+    #icon_only_widget {
+        background-color: #eceeed;
+    }
+
+    /* style for QPushButton and QLabel */
+    #icon_only_widget QPushButton, QLabel {
+        background-color: #eceeed;
+    }
+
+    #icon_only_widget QPushButton:hover {
+        background-color: #fff;
+    }
+
+    #logo_label_1 {
+        background-color: #eceeed;
+    }
+
+    #full_menu_widget {
+        background-color: #eceeed;
+    }
+    #full_menu_widget QPushButton {
+        background-color: #eceeed;
+        color: #898a8f;
+    }
+
+    #full_menu_widget QPushButton:hover {
+        background-color: #ffffff;
+    }
+
+    #full_menu_widget QPushButton:checked {
+        color: #333333;
+    }
+
+    #logo_label_2 {
+        background-color: #eceeed;
+    }
+
+    #logo_label_3 {
+        background-color: #eceeed;
+        color: #00A7E9;
+    }
+/*= END
+==================================================== */
+
+/*= Style for setting page START
+  ==================================================== */
+	#container {
+		background-color:#c8c8c8;
+	}
+
+	#container_label_title {
+		background-color: #c8c8c8;
+		color: #333333;
+	}
+
+	#container_label_content {
+		background-color: #c8c8c8;
+		color: #4a90e2;
+	}
+/*= END
+  ==================================================== */

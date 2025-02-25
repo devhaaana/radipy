@@ -1,0 +1,96 @@
+/*= Style for button to change menu style START
+  ==================================================== */
+	#change_btn:hover {
+        background-color: #3f4042;
+    }
+/*= END
+  ==================================================== */
+
+/*= Style for button to search style START
+  ==================================================== */
+	#search_btn:hover {
+        background-color: #3f4042;
+    }
+/*= END
+  ==================================================== */
+
+/*= Style for button to setting style START
+  ==================================================== */
+	#setting_btn:hover {
+        background-color: #3f4042;
+    }
+/*= END
+  ==================================================== */
+
+/*= Style for menu with icon only START
+  ==================================================== */
+	#icon_only_widget {
+		background-color: #333333;
+	}
+
+	#icon_only_widget QPushButton {
+		background-color: #333333;
+	}
+
+	#icon_only_widget QLabel {
+		background-color: #333333;
+	}
+
+	#icon_only_widget QPushButton:hover {
+		background-color: #3f4042;
+	}
+
+	#logo_label_1 {
+		background-color: #333333;
+	}
+
+/*= END
+  ==================================================== */
+
+/*= Style for menu with icon and text START
+  ==================================================== */
+	#full_menu_widget {
+		background-color: #333333;
+	}
+
+	#full_menu_widget QPushButton {
+		background-color: #333333;
+		color: #898a8f;
+	}
+
+	#full_menu_widget QPushButton:hover {
+		background-color: #3f4042;
+	}
+
+	#full_menu_widget QPushButton:checked {
+		color: #fff;
+	}
+
+	#logo_label_2 {
+		background-color: #333333;
+	}
+
+	#logo_label_3 {
+		background-color: #333333;
+		color: #00A7E9;
+	}
+/*= END
+  ==================================================== */
+
+  /*= Style for setting page START
+  ==================================================== */
+	#container {
+		background-color: #1a1a1a;
+	}
+
+	#container_label_title {
+		background-color: #1a1a1a;
+		color: #fff;
+	}
+
+	#container_label_content {
+		background-color: #1a1a1a;
+		color: #4a90e2;
+	}
+/*= END
+  ==================================================== */

@@ -1,0 +1,113 @@
+/*= Style for button to change menu style START
+  ==================================================== */
+	#change_btn {
+		padding: 5px;
+		border: none;
+		width: 30px;
+		height: 30px;
+	}
+/*= END
+  ==================================================== */
+
+/*= Style for menu with icon only START
+  ==================================================== */
+	#icon_only_widget {
+		width:50px;
+	}
+
+	#icon_only_widget QPushButton, QLabel {
+		height:50px;
+		border:none;
+	}
+
+	#logo_label_1 {
+		padding: 5px;
+	}
+
+/*= END
+  ==================================================== */
+
+/*= Style for menu with icon and text START
+  ==================================================== */
+	#full_menu_widget QPushButton {
+		border:none;
+		border-radius: 3px;
+		text-align: left;
+		padding: 8px 16px 8px 16px;
+	}
+
+	#logo_label_2 {
+		padding: 5px;
+	}
+
+	#logo_label_3 {
+		padding-right: 10px;
+	}
+/*= END
+  ==================================================== */
+
+/*= Style for search button START
+  ==================================================== */
+	#search_btn {
+		border: none;
+	}
+/*= END
+  ==================================================== */
+
+/*= Style for search input START
+  ==================================================== */
+	#search_input {
+		border: none;
+		padding: 5px 10px;
+	}
+/*= END
+  ==================================================== */
+
+/*= Style for user information button START
+  ==================================================== */
+	#setting_btn {
+		border: none;
+	}
+/*= END
+  ==================================================== */
+
+
+/*= Style for live play button START
+  ==================================================== */
+	#toggle_button {
+		border-radius: 25px;
+		background-color: #4CAF50;
+		color: white;
+		font-size: 16px;
+		border: 2px solid #4CAF50;
+	}
+
+	#toggle_button:checked {
+		background-color: #f44336;
+		border-color: #f44336;
+	}
+/*= END
+  ==================================================== */
+
+/*= Style for setting page START
+  ==================================================== */
+	#profile_label_name {
+		font-size: 20px;
+		font-weight: bold;
+	}
+
+	#container {
+		border-radius: 10px;
+		padding: 10px 30px;
+	}
+
+	#container_label_title {
+		font-size: 16px;
+		font-weight: bold;
+	}
+
+	#container_label_content {
+		font-size: 14px;
+	}
+/*= END
+  ==================================================== */
