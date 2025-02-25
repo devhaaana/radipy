@@ -10,6 +10,20 @@
 
 `radipy` can record the [radiko.jp](https://radiko.jp/) programs outside of Japan.
 
+## Index
+
+* [Architecture](#architecture)
+* [Warning](#warning)
+* [Technologies](#technologies)
+* [Technical Details](#technical-details)
+* [Getting Started](#getting-started)
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [Release Files](#release-files)
+* [Reference](#reference)
+
+## Architecture
+
 ```
 radipy
 ├─ LICENSE
@@ -59,25 +73,29 @@ radipy
 ```
 
 ## Warning
+
 **Please do not use this project for commercial use. Only for your personal, non-commercial use.**
 
 ## Technologies
+
 - `Python` : 3.12
 - `PyQt`
 - `FFmpeg`
 
 # Technical Details
+
 The authentication of PC(html5) version radkio validates user's location via IP address.
 However, the android version of radkio validates user provided by GPS information, not via user's IP address.
 
 # Getting Started
+
 ## Installation
+
 - You can install it **locally:**
   ```console
   $ git clone https://github.com/devhaaana/radipy.git
   $ cd radipy
   ```
-
 - Make sure you have **Python** installed on your system. Then, install the **required packages** by running the following command:
   ```console
   conda create -n radiko_env python=3.12
@@ -86,6 +104,7 @@ However, the android version of radkio validates user provided by GPS informatio
   ```
 
 ## Usage
+
 ```console
 python main.py
 ```
@@ -93,6 +112,14 @@ python main.py
 ![base-ui-live](./sample/base-ui-live.png)
 ![base-ui-download](./sample/base-ui-download.png)
 
+## Release Files
+
+| File                                                                                    | Description                                                        |
+| :-------------------------------------------------------------------------------------- | :----------------------------------------------------------------- |
+| [radipy-1.0.0.zip](https://github.com/devhaaana/radipy/archive/refs/tags/v1.0.0.zip)       | A*ZIP* file containing the full source code of radipy v1.0.0.    |
+| [radipy-1.0.0.tar.gz](https://github.com/devhaaana/radipy/archive/refs/tags/v1.0.0.tar.gz) | A*TAR.GZ* file containing the full source code of radipy v1.0.0. |
+
 ## Reference
+
 - [rajiko](https://github.com/jackyzy823/rajiko)
 - [radiko-downloader](https://github.com/devhaaana/radiko-downloader.git)
