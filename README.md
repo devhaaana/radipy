@@ -9,7 +9,9 @@
 
 </div>
 
-`radipy` can record the [radiko.jp](https://radiko.jp/) programs outside of Japan.
+<br />
+
+`radipy` is a desktop application for streaming and downloading broadcasts from [radiko.jp](https://radiko.jp/), a Japanese radio service, outside of Japan, with a PyQt5-based interface.
 
 ## Index
 
@@ -124,3 +126,11 @@ python main.py
 
 - [rajiko](https://github.com/jackyzy823/rajiko)
 - [radiko-downloader](https://github.com/devhaaana/radiko-downloader.git)
+
+<br />
+
+<div align="center">
+  
+  [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fdevhaaana%2Fradipy.git&count_bg=%23000000&title_bg=%23000000&icon=github.svg&icon_color=%23FFFFFF&title=GitHub&edge_flat=false)](https://hits.seeyoufarm.com)
+
+</div>
