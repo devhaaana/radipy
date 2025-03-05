@@ -1,5 +1,3 @@
-**[**한국어 안내서 (README-KR)**](**README-KR.md**)**
-
 <div align="center">
 
   [![radipy](../images/images/banner.svg)](#readme)
