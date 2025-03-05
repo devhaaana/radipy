@@ -31,8 +31,8 @@
 - [Getting Started](#getting-started)
   - [Installation](#installation)
   - [Usage](#usage)
-  - [Release Files](#release-files)
-  - [Reference](#reference)
+- [Release Files](#release-files)
+- [Reference](#reference)
 
 ## Architecture
 
@@ -124,14 +124,14 @@ python main.py
 ![base-ui-live](./sample/base-ui-live.png)
 ![base-ui-download](./sample/base-ui-download.png)
 
-### Release Files
+## Release Files
 
 | File                                                                                    | Description                                                        |
 | :-------------------------------------------------------------------------------------- | :----------------------------------------------------------------- |
 | [radipy-1.0.0.zip](https://github.com/devhaaana/radipy/archive/refs/tags/v1.0.0.zip)       | A*ZIP* file containing the full source code of radipy v1.0.0.    |
 | [radipy-1.0.0.tar.gz](https://github.com/devhaaana/radipy/archive/refs/tags/v1.0.0.tar.gz) | A*TAR.GZ* file containing the full source code of radipy v1.0.0. |
 
-### Reference
+## Reference
 
 - [rajiko](https://github.com/jackyzy823/rajiko)
 - [radiko-downloader](https://github.com/devhaaana/radiko-downloader.git)

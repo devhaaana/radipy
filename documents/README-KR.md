@@ -33,8 +33,8 @@
 - [시작하기](#시작하기)
   - [설치](#설치)
   - [사용 방법](#사용-방법)
-  - [릴리스 파일](#릴리스-파일)
-  - [참고](#참고)
+- [릴리스 파일](#릴리스-파일)
+- [참고](#참고)
 
 ## 아키텍처
 
@@ -126,14 +126,14 @@ python main.py
 ![base-ui-live](../sample/base-ui-live.png)
 ![base-ui-download](../sample/base-ui-download.png)
 
-### 릴리스 파일
+## 릴리스 파일
 
 | File                                                                                    | Description                                            |
 | :-------------------------------------------------------------------------------------- | :----------------------------------------------------- |
 | [radipy-1.0.0.zip](https://github.com/devhaaana/radipy/archive/refs/tags/v1.0.0.zip)       | radipy v1.0.0의 전체 소스 코드가 포함된*ZIP* 파일    |
 | [radipy-1.0.0.tar.gz](https://github.com/devhaaana/radipy/archive/refs/tags/v1.0.0.tar.gz) | radipy v1.0.0의 전체 소스 코드가 포함된*TAR.GZ* 파일 |
 
-### 참고
+## 참고
 
 - [rajiko](https://github.com/jackyzy823/rajiko)
 - [radiko-downloader](https://github.com/devhaaana/radiko-downloader.git)
