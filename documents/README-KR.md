@@ -1,6 +1,8 @@
+**[**한국어 안내서 (README-KR)**](**README-KR.md**)**
+
 <div align="center">
 
-  [![radipy](./images/images/banner.svg)](#readme)
+  [![radipy](../images/images/banner.svg)](#readme)
 
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE "License")
   [![Release version](https://img.shields.io/github/release/devhaaana/radipy.svg?label=Download&style=for-the-badge)](#release-files "Release Files")
@@ -19,22 +21,22 @@
 
 <br />
 
-`radipy` is a desktop application for streaming and downloading broadcasts from [radiko.jp](https://radiko.jp/), a Japanese radio service, outside of Japan, with a PyQt5-based interface.
+`radipy`는 일본 라디오 서비스인 [radiko.jp](https://radiko.jp/)의 방송을 일본 외 지역에서 스트리밍하고 다운로드할 수 있는 PyQt5 기반의 데스크톱 애플리케이션입니다.
 
-## Index
+## 인덱스
 
-- [Index](#index)
-- [Architecture](#architecture)
-- [Warning](#warning)
-- [Technologies](#technologies)
-- [Technical Details](#technical-details)
-- [Getting Started](#getting-started)
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [Release Files](#release-files)
-  - [Reference](#reference)
+- [인덱스](#인덱스)
+- [아키텍처](#아키텍처)
+- [경고](#경고)
+- [사용 기술](#사용-기술)
+- [기술적 세부사항](#기술적-세부사항)
+- [시작하기](#시작하기)
+  - [설치](#설치)
+  - [사용 방법](#사용-방법)
+  - [릴리스 파일](#릴리스-파일)
+  - [참고](#참고)
 
-## Architecture
+## 아키텍처
 
 ```
 radipy
@@ -84,54 +86,54 @@ radipy
 └─ ui_pyqt5.py
 ```
 
-## Warning
+## 경고
 
-**Please do not use this project for commercial use. Only for your personal, non-commercial use.**
+**이 프로젝트를 상업적인 용도로 사용하지 마십시오. 개인적, 비상업적인 용도로만 사용해 주세요.**
 
-## Technologies
+## 사용 기술
 
 - `Python` : 3.12
 - `PyQt`
 - `FFmpeg`
 
-## Technical Details
+## 기술적 세부사항
 
-The authentication of PC(html5) version radiko validates user's location via IP address.
-However, the android version of radiko validates user provided by GPS information, not via user's IP address.
+PC(HTML5) 버전의 Radiko는 사용자의 위치를 IP 주소를 통해 인증합니다.
+그러나 Android 버전의 Radiko는 IP 주소가 아닌 GPS 정보를 기반으로 사용자를 인증합니다.
 
-## Getting Started
+## 시작하기
 
-### Installation
+### 설치
 
-- You can install it **locally:**
+- **로컬** 설치
   ```console
   $ git clone https://github.com/devhaaana/radipy.git
   $ cd radipy
   ```
-- Make sure you have **Python** installed on your system. Then, install the **required packages** by running the following command:
+- 시스템에 **Python**이 설치되어 있는지 확인한 후, 다음 명령어를 실행하여 **필요한 패키지**를 설치하세요.
   ```console
   conda create -n radiko_env python=3.12
   conda activate radiko_env
   pip install -r requirements.txt
   ```
 
-### Usage
+### 사용 방법
 
 ```console
 python main.py
 ```
 
-![base-ui-live](./sample/base-ui-live.png)
-![base-ui-download](./sample/base-ui-download.png)
+![base-ui-live](../sample/base-ui-live.png)
+![base-ui-download](../sample/base-ui-download.png)
 
-### Release Files
+### 릴리스 파일
 
-| File                                                                                    | Description                                                        |
-| :-------------------------------------------------------------------------------------- | :----------------------------------------------------------------- |
-| [radipy-1.0.0.zip](https://github.com/devhaaana/radipy/archive/refs/tags/v1.0.0.zip)       | A*ZIP* file containing the full source code of radipy v1.0.0.    |
-| [radipy-1.0.0.tar.gz](https://github.com/devhaaana/radipy/archive/refs/tags/v1.0.0.tar.gz) | A*TAR.GZ* file containing the full source code of radipy v1.0.0. |
+| File                                                                                    | Description                                            |
+| :-------------------------------------------------------------------------------------- | :----------------------------------------------------- |
+| [radipy-1.0.0.zip](https://github.com/devhaaana/radipy/archive/refs/tags/v1.0.0.zip)       | radipy v1.0.0의 전체 소스 코드가 포함된*ZIP* 파일    |
+| [radipy-1.0.0.tar.gz](https://github.com/devhaaana/radipy/archive/refs/tags/v1.0.0.tar.gz) | radipy v1.0.0의 전체 소스 코드가 포함된*TAR.GZ* 파일 |
 
-### Reference
+### 참고
 
 - [rajiko](https://github.com/jackyzy823/rajiko)
 - [radiko-downloader](https://github.com/devhaaana/radiko-downloader.git)
@@ -139,7 +141,7 @@ python main.py
 <br />
 
 <div align="center">
-  
+
   [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fdevhaaana%2Fradipy.git&count_bg=%23000000&title_bg=%23000000&icon=github.svg&icon_color=%23FFFFFF&title=GitHub&edge_flat=false)](https://hits.seeyoufarm.com)
 
 </div>

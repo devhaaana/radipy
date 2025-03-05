@@ -1,6 +1,6 @@
 <div align="center">
 
-  [![radipy](./images/images/banner.svg)](#readme)
+  [![radipy](../images/images/banner.svg)](#readme)
 
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE "License")
   [![Release version](https://img.shields.io/github/release/devhaaana/radipy.svg?label=Download&style=for-the-badge)](#release-files "Release Files")
@@ -19,22 +19,22 @@
 
 <br />
 
-`radipy` is a desktop application for streaming and downloading broadcasts from [radiko.jp](https://radiko.jp/), a Japanese radio service, outside of Japan, with a PyQt5-based interface.
+`radipy` は、日本のラジオサービス [radiko.jp](https://radiko.jp/) の放送を日本国外でストリーミングおよびダウンロードできる PyQt5 ベースのデスクトップアプリケーションです。
 
-## Index
+## インデックス
 
-- [Index](#index)
-- [Architecture](#architecture)
-- [Warning](#warning)
-- [Technologies](#technologies)
-- [Technical Details](#technical-details)
-- [Getting Started](#getting-started)
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [Release Files](#release-files)
-  - [Reference](#reference)
+- [インデックス](#インデックス)
+- [アーキテクチャ](#アーキテクチャ)
+- [警告](#警告)
+- [技術](#技術)
+- [技術的詳細](#技術的詳細)
+- [はじめに](#はじめに)
+  - [インストール](#インストール)
+  - [使用方法](#使用方法)
+  - [リリースファイル](#リリースファイル)
+  - [参考](#参考)
 
-## Architecture
+## アーキテクチャ
 
 ```
 radipy
@@ -84,54 +84,54 @@ radipy
 └─ ui_pyqt5.py
 ```
 
-## Warning
+## 警告
 
-**Please do not use this project for commercial use. Only for your personal, non-commercial use.**
+**このプロジェクトを商業目的で使用しないでください。個人的な非商業的使用のみにご利用ください。**
 
-## Technologies
+## 技術
 
 - `Python` : 3.12
 - `PyQt`
 - `FFmpeg`
 
-## Technical Details
+## 技術的詳細
 
-The authentication of PC(html5) version radiko validates user's location via IP address.
-However, the android version of radiko validates user provided by GPS information, not via user's IP address.
+PC (HTML5) 版の radiko は、ユーザーの位置情報を IP アドレスで確認します。
+しかし、Android 版の radiko は、ユーザー提供の GPS 情報でユーザーを認証します。IP アドレスを使用しません。
 
-## Getting Started
+## はじめに
 
-### Installation
+### インストール
 
-- You can install it **locally:**
+- **ローカル**にインストールする方法:
   ```console
   $ git clone https://github.com/devhaaana/radipy.git
   $ cd radipy
   ```
-- Make sure you have **Python** installed on your system. Then, install the **required packages** by running the following command:
+- **Python** がシステムにインストールされていることを確認してください。次に、必要なパッケージを以下のコマンドでインストールします:
   ```console
   conda create -n radiko_env python=3.12
   conda activate radiko_env
   pip install -r requirements.txt
   ```
 
-### Usage
+### 使用方法
 
 ```console
 python main.py
 ```
 
-![base-ui-live](./sample/base-ui-live.png)
-![base-ui-download](./sample/base-ui-download.png)
+![base-ui-live](../sample/base-ui-live.png)
+![base-ui-download](../sample/base-ui-download.png)
 
-### Release Files
+### リリースファイル
 
-| File                                                                                    | Description                                                        |
+| ファイル                                                                                    | 説明                                                        |
 | :-------------------------------------------------------------------------------------- | :----------------------------------------------------------------- |
-| [radipy-1.0.0.zip](https://github.com/devhaaana/radipy/archive/refs/tags/v1.0.0.zip)       | A*ZIP* file containing the full source code of radipy v1.0.0.    |
-| [radipy-1.0.0.tar.gz](https://github.com/devhaaana/radipy/archive/refs/tags/v1.0.0.tar.gz) | A*TAR.GZ* file containing the full source code of radipy v1.0.0. |
+| [radipy-1.0.0.zip](https://github.com/devhaaana/radipy/archive/refs/tags/v1.0.0.zip)       | radipy v1.0.0 のソースコードを含む *ZIP* ファイル |
+| [radipy-1.0.0.tar.gz](https://github.com/devhaaana/radipy/archive/refs/tags/v1.0.0.tar.gz) | radipy v1.0.0 のソースコードを含む *TAR.GZ* ファイル |
 
-### Reference
+### 参考
 
 - [rajiko](https://github.com/jackyzy823/rajiko)
 - [radiko-downloader](https://github.com/devhaaana/radiko-downloader.git)
