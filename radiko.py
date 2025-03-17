@@ -2,6 +2,7 @@ import os
 import re
 import sys
 import json
+import eyed3
 import shlex
 import base64
 import secrets
@@ -10,6 +11,9 @@ import subprocess
 from random import *
 from datetime import datetime
 import defusedxml.ElementTree as ET
+from moviepy import *
+
+from utils import *
 
 
 class Radiko_Downloader():
@@ -27,14 +31,6 @@ class Radiko_Downloader():
         self.app, self.device, self.connection = self.get_platform_info()
         
         self.http = urllib3.PoolManager()
-    
-    def get_resource_path(self, relative_path):
-        if hasattr(sys, '_MEIPASS'):
-            base_path = sys._MEIPASS
-        else:
-            base_path = os.path.abspath(".")
-            
-        return os.path.join(base_path, relative_path)
     
     def load_json(self, file_path):
         try:
@@ -97,7 +93,7 @@ class Radiko_Downloader():
             return None
     
     def get_GPS(self, area_id) -> str:
-        file_path = self.get_resource_path("data/json/area.json")
+        file_path = get_resource_path("data/json/area.json")
         try:
             COORDINATES_LIST = self.load_json(file_path)
             latitude = COORDINATES_LIST.get(area_id, {}).get('latitude', 0)
@@ -112,7 +108,7 @@ class Radiko_Downloader():
         return ''
     
     def get_Full_Key(self) -> str:
-        file_path = self.get_resource_path("data/auth/auth_key.bin")
+        file_path = get_resource_path("data/auth/auth_key.bin")
         try:
             with open(file_path, 'rb') as f:
                 return base64.b64encode(f.read())
@@ -370,3 +366,22 @@ class Radiko_Downloader():
         except Exception as e:
             print(f"[Error] Saving program: {e}")
     
+    def set_mp3_meta_tag(self, program_info):
+        audiofile = eyed3.load(self.save_path)
+        
+        date = datetime.strptime(program_info['date'], '%Y%m%d').strftime("%Y-%m-%d")
+        img = self.get_program_image(img_url=program_info['img_url'])
+        audiofile.tag.images.set(3, img, 'image/png', u'Description')
+        
+        audiofile.tag.title = program_info['title']
+        audiofile.tag.artist = program_info['performer']
+        audiofile.tag.album = f'「{program_info['station']}」 {program_info['title']} {date}'
+        audiofile.tag.album_artist = program_info['performer']
+        audiofile.tag.recording_date = date
+        audiofile.tag.original_release_date = date
+        audiofile.tag.release_date = date
+        audiofile.tag.tagging_date = date
+        audiofile.tag.encoding_date = date
+        audiofile.tag.track_num = 1
+        
+        audiofile.tag.save()

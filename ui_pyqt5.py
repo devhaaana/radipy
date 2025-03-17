@@ -1,4 +1,5 @@
 from PyQt5 import QtCore, QtGui, QtWidgets, QtMultimedia, QtMultimediaWidgets
+from utils import *
 from radiko import *
 
 class StreamThread(QtCore.QThread):
@@ -21,13 +22,16 @@ class StreamThread(QtCore.QThread):
 class DownloadThread(QtCore.QThread):
     download_complete = QtCore.pyqtSignal(bool, str)
 
-    def __init__(self, radiko_instance):
+    def __init__(self, radiko_instance, program_info):
         super().__init__()
         self.radiko = radiko_instance
+        self.program_info = program_info
 
     def run(self):
         try:
             self.radiko.save_mp3_file()
+            self.radiko.set_mp3_meta_tag(program_info=self.program_info)
+            # self.radiko.save_mp4_file(program_info=self.program_info)
             self.download_complete.emit(True, "✅ Download complete!")
         except Exception as e:
             self.download_complete.emit(False, f"❌ Download failed: {str(e)}")
@@ -38,6 +42,7 @@ class Ui_MainWindow(object):
         self.version = '1.0.0'
         self.stations = {}
         self.selected_date = None
+        self.selected_station_name = None
         self.selected_station = None
         self.selected_title = None
         self.stream_thread = None
@@ -55,7 +60,7 @@ class Ui_MainWindow(object):
         self.convert_time = None
 
         self.folder_path = None
-        self.init_path = './data/mp3/download.mp3'
+        self.init_path = get_resource_path('data/mp3/download.mp3')
         
     def reset_values(self):
         # self.search_input.clear()
@@ -89,7 +94,7 @@ class Ui_MainWindow(object):
         MainWindow.resize(1700, 1200)
     
     def set_icons(self, dark_mode):
-        icon_folder = f"./images/icons/dark/" if dark_mode else f"./images/icons/light/"
+        icon_folder = get_resource_path(f"./images/icons/dark/") if dark_mode else get_resource_path(f"./images/icons/light/")
         
         self.icon = QtGui.QIcon()
         self.icon.addPixmap(QtGui.QPixmap(os.path.join(icon_folder, "antenna-512.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -135,7 +140,7 @@ class Ui_MainWindow(object):
         self.logo_label_1.setMinimumSize(QtCore.QSize(50, 50))
         self.logo_label_1.setMaximumSize(QtCore.QSize(50, 50))
         self.logo_label_1.setText("")
-        self.logo_label_1.setPixmap(QtGui.QPixmap("./images/images/radiko.png"))
+        self.logo_label_1.setPixmap(QtGui.QPixmap(get_resource_path("./images/images/radiko.png")))
         self.logo_label_1.setScaledContents(True)
         self.logo_label_1.setObjectName("logo_label_1")
         self.horizontalLayout_3.addWidget(self.logo_label_1)
@@ -183,7 +188,7 @@ class Ui_MainWindow(object):
         self.logo_label_2.setMinimumSize(QtCore.QSize(40, 40))
         self.logo_label_2.setMaximumSize(QtCore.QSize(40, 40))
         self.logo_label_2.setText("")
-        self.logo_label_2.setPixmap(QtGui.QPixmap("./images/images/radiko.png"))
+        self.logo_label_2.setPixmap(QtGui.QPixmap(get_resource_path("./images/images/radiko.png")))
         self.logo_label_2.setScaledContents(True)
         self.logo_label_2.setObjectName("logo_label_2")
         self.horizontalLayout_2.addWidget(self.logo_label_2)
@@ -476,7 +481,7 @@ class Ui_MainWindow(object):
         self.gridLayout_8.setAlignment(QtCore.Qt.AlignCenter)
         
         self.profile_pic = QtWidgets.QLabel(self.page_4)
-        pixmap = QtGui.QPixmap("./images/images/profile-circle.png")
+        pixmap = QtGui.QPixmap(get_resource_path("./images/images/profile-circle.png"))
         pixmap = pixmap.scaled(200, 200, QtCore.Qt.KeepAspectRatio, QtCore.Qt.SmoothTransformation)
         self.profile_pic.setPixmap(pixmap)
         self.profile_pic.setAlignment(QtCore.Qt.AlignCenter)
@@ -543,6 +548,7 @@ class Ui_MainWindow(object):
 
     def on_station_selected(self, item):
         self.current_page = self.stackedWidget.currentIndex()
+        self.selected_station_name = item.text().split("(")[0].strip()
         self.selected_station = item.text().split("(")[-1].strip(")")
         self.page_1_image_label.clear()
         self.page_2_image_label.clear()
@@ -608,6 +614,21 @@ class Ui_MainWindow(object):
             self.page_2_program_pfm_text.setText(performer)
             
         self.set_program_image(img_url)
+        
+        self.program_info = self.set_program_info(title=title, performer=performer, img_url=img_url)
+        
+        self.init_path = get_resource_path(f'data/mp3/{self.selected_date}-{self.selected_station_name}-{title}.mp3')
+        self.file_path_line_edit.setPlaceholderText(self.init_path)
+        
+    def set_program_info(self, title, performer, img_url):
+        program_info = {}
+        program_info['date'] = self.selected_date
+        program_info['station'] = self.selected_station_name
+        program_info['title'] = title
+        program_info['performer'] = performer
+        program_info['img_url'] = img_url
+        
+        return program_info
             
     def set_program_image(self, img_url):
         if img_url:
@@ -619,7 +640,14 @@ class Ui_MainWindow(object):
             elif self.current_page == 1:
                 self.page_2_image_label.setPixmap(pixmap.scaled(self.page_2_image_label.size(), QtCore.Qt.KeepAspectRatio, QtCore.Qt.SmoothTransformation))
 
+    def check_path(self, filepath):
+        check_path = os.path.dirname(filepath)
+        if not os.path.exists(check_path):
+                os.makedirs(check_path, exist_ok=True)
+
     def select_folder(self):
+        self.check_path(self.init_path)
+                
         folder_path, _ = QtWidgets.QFileDialog.getSaveFileName(None, "Set the save path", self.init_path, "MP3 Files (*.mp3)")
 
         if folder_path:
@@ -669,7 +697,7 @@ class Ui_MainWindow(object):
             self.console_output.append("📥 Start MP3 download...")
             QtWidgets.QApplication.processEvents()
 
-            self.download_thread = DownloadThread(self.radiko)
+            self.download_thread = DownloadThread(self.radiko, self.program_info)
             self.download_thread.download_complete.connect(self.on_download_complete)
             self.download_thread.start()
 
