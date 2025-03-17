@@ -128,8 +128,8 @@ python main.py
 
 | File                                                                                    | Description                                            |
 | :-------------------------------------------------------------------------------------- | :----------------------------------------------------- |
-| [radipy-1.0.0.zip](https://github.com/devhaaana/radipy/archive/refs/tags/v1.0.0.zip)       | radipy v1.0.0의 전체 소스 코드가 포함된*ZIP* 파일    |
-| [radipy-1.0.0.tar.gz](https://github.com/devhaaana/radipy/archive/refs/tags/v1.0.0.tar.gz) | radipy v1.0.0의 전체 소스 코드가 포함된*TAR.GZ* 파일 |
+| [radipy-1.1.0.zip](https://github.com/devhaaana/radipy/archive/refs/tags/v1.1.0.zip)       | radipy v1.1.0의 전체 소스 코드가 포함된*ZIP* 파일    |
+| [radipy-1.1.0.tar.gz](https://github.com/devhaaana/radipy/archive/refs/tags/v1.1.0.tar.gz) | radipy v1.1.0의 전체 소스 코드가 포함된*TAR.GZ* 파일 |
 
 ## 참고
 

@@ -126,10 +126,10 @@ python main.py
 
 ## Release Files
 
-| File                                                                                   | Description                                                       |
-| -------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
-| [radipy-1.0.0.zip](https://github.com/devhaaana/radipy/archive/refs/tags/v1.0.0.zip)       | A*ZIP* file containing the full source code of radipy v1.0.0.    |
-| [radipy-1.0.0.tar.gz](https://github.com/devhaaana/radipy/archive/refs/tags/v1.0.0.tar.gz) | A*TAR.GZ* file containing the full source code of radipy v1.0.0. |
+| File                                                                                    | Description                                                        |
+| :-------------------------------------------------------------------------------------- | :----------------------------------------------------------------- |
+| [radipy-1.1.0.zip](https://github.com/devhaaana/radipy/archive/refs/tags/v1.1.0.zip)       | A*ZIP* file containing the full source code of radipy v1.1.0.    |
+| [radipy-1.1.0.tar.gz](https://github.com/devhaaana/radipy/archive/refs/tags/v1.1.0.tar.gz) | A*TAR.GZ* file containing the full source code of radipy v1.1.0. |
 
 ## Reference
 

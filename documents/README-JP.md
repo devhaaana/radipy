@@ -128,8 +128,8 @@ python main.py
 
 | ファイル                                                                                    | 説明                                                        |
 | :-------------------------------------------------------------------------------------- | :----------------------------------------------------------------- |
-| [radipy-1.0.0.zip](https://github.com/devhaaana/radipy/archive/refs/tags/v1.0.0.zip)       | radipy v1.0.0 のソースコードを含む *ZIP* ファイル |
-| [radipy-1.0.0.tar.gz](https://github.com/devhaaana/radipy/archive/refs/tags/v1.0.0.tar.gz) | radipy v1.0.0 のソースコードを含む *TAR.GZ* ファイル |
+| [radipy-1.1.0.zip](https://github.com/devhaaana/radipy/archive/refs/tags/v1.1.0.zip)       | radipy v1.1.0 のソースコードを含む *ZIP* ファイル |
+| [radipy-1.1.0.tar.gz](https://github.com/devhaaana/radipy/archive/refs/tags/v1.1.0.tar.gz) | radipy v1.1.0 のソースコードを含む *TAR.GZ* ファイル |
 
 ## 参考
 
