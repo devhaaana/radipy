@@ -128,8 +128,8 @@ python main.py
 
 | ファイル                                                                                    | 説明                                                        |
 | :-------------------------------------------------------------------------------------- | :----------------------------------------------------------------- |
-| [radipy-1.1.0.zip](https://github.com/devhaaana/radipy/archive/refs/tags/v1.1.0.zip)       | radipy v1.1.0 のソースコードを含む *ZIP* ファイル |
-| [radipy-1.1.0.tar.gz](https://github.com/devhaaana/radipy/archive/refs/tags/v1.1.0.tar.gz) | radipy v1.1.0 のソースコードを含む *TAR.GZ* ファイル |
+| [radipy-1.1.1.zip](https://github.com/devhaaana/radipy/archive/refs/tags/v1.1.1.zip)       | radipy v1.1.1 のソースコードを含む *ZIP* ファイル |
+| [radipy-1.1.1.tar.gz](https://github.com/devhaaana/radipy/archive/refs/tags/v1.1.1.tar.gz) | radipy v1.1.1 のソースコードを含む *TAR.GZ* ファイル |
 
 ## 参考
 
@@ -137,9 +137,3 @@ python main.py
 - [radiko-downloader](https://github.com/devhaaana/radiko-downloader.git)
 
 <br />
-
-<div align="center">
-  
-  [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fdevhaaana%2Fradipy.git&count_bg=%23000000&title_bg=%23000000&icon=github.svg&icon_color=%23FFFFFF&title=GitHub&edge_flat=false)](https://hits.seeyoufarm.com)
-
-</div>
