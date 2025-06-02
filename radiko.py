@@ -11,7 +11,6 @@ import subprocess
 from random import *
 from datetime import datetime
 import defusedxml.ElementTree as ET
-from moviepy import *
 
 from utils import *
 
@@ -252,26 +251,37 @@ class Radiko_Downloader():
         try:
             auth_token = self.access_Authentication()
             
-            if mode == 'live':
-                stream_url = self.get_live_Stream_URL()
-            elif mode == 'download':
-                stream_url = f"https://radiko.jp/v2/api/ts/playlist.m3u8"
+            # if mode == 'live':
+            #     stream_url = self.get_live_Stream_URL()
+            # elif mode == 'download':
+            #     stream_url = f"https://radiko.jp/v2/api/ts/playlist.m3u8"
+            
+            stream_url = f"https://radiko.jp/v2/api/ts/playlist.m3u8"
                 
             stream_info = {}
             stream_info['token'] = auth_token
             stream_info['url'] = stream_url
-
-            if self.startTime and self.endTime:
+                
+            # if self.startTime and self.endTime:
+            #     startTime = self.convert_datetime(date=self.startTime, mode='strftime')
+            #     endTime = self.convert_datetime(date=self.endTime, mode='strftime')
+            #     stream_info['url'] += f"?station_id={self.station_id}&l=15&ft={startTime}&to={endTime}"
+            # else:
+            #     stream_info['url'] += f"?station_id={self.station_id}&l=15"
+                
+            # if mode == 'live':
+            #     chunk_url = self.get_Chunk_m3u8_URL(url=stream_info['url'], auth_token=stream_info['token'])
+            #     stream_info['url'] = f'{chunk_url}?X-Radiko-AuthToken={stream_info['token']}'
+                
+            if mode == 'live':
+                stream_info['url'] += f"?station_id={self.station_id}&l=15"
+                chunk_url = self.get_Chunk_m3u8_URL(url=stream_info['url'], auth_token=stream_info['token'])
+                stream_info['url'] = f'{chunk_url}?X-Radiko-AuthToken={stream_info['token']}'
+            else:
                 startTime = self.convert_datetime(date=self.startTime, mode='strftime')
                 endTime = self.convert_datetime(date=self.endTime, mode='strftime')
                 stream_info['url'] += f"?station_id={self.station_id}&l=15&ft={startTime}&to={endTime}"
-            else:
-                stream_info['url'] += f"?station_id={self.station_id}&l=15"
                 
-            if mode == 'live':
-                chunk_url = self.get_Chunk_m3u8_URL(url=stream_info['url'], auth_token=stream_info['token'])
-                stream_info['url'] = f'{chunk_url}?X-Radiko-AuthToken={stream_info['token']}'
-            
             return stream_info
         except Exception as e:
             print(f"[Error] Getting stream info: {e}")
@@ -293,13 +303,15 @@ class Radiko_Downloader():
             if (url_areafree == self.areafree) and (url_timefree == self.timefree):
                 base_url.append(url[0].text)
                 
+        print(f'base_url: {base_url}')
+                
         if (self.areafree == False) and (self.timefree == False):
             url = base_url[2]
         elif (self.areafree == False) and (self.timefree == True):
             url = base_url[1]
         else:
             url = base_url[-1]
-            
+        
         return url
     
     def get_Chunk_m3u8_URL(self, url, auth_token) -> str:
