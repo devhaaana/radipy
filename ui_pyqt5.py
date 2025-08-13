@@ -303,7 +303,7 @@ class Ui_MainWindow(object):
 
     def retranslate_UI(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Radiko Downloader"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "radipy"))
         self.logo_label_3.setText(_translate("MainWindow", "Radiko"))
         self.live_btn_2.setText(_translate("MainWindow", "Live"))
         self.downloader_btn_2.setText(_translate("MainWindow", "Download"))
